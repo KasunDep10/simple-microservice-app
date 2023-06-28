@@ -18,12 +18,14 @@ public class BookController {
         this.bookBO = bookBO;
     }
 
+    /* Web service for save a book*/
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public BookDTO saveBook(@RequestBody @Valid BookDTO book) throws Exception {
         return bookBO.saveBook(book);
     }
 
+    /* Web service for get All books */
     @GetMapping
     public List<BookDTO> getAllBooks() throws Exception {
         return bookBO.getAllBooks();
